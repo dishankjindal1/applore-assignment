@@ -7,15 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  BlocOverrides.runZoned(() => runApp(const Root()),
-  blocObserver: AppBlocObserver(),
+  BlocOverrides.runZoned(
+    () => runApp(const Root()),
+    blocObserver: AppBlocObserver(),
   );
 }
 
@@ -28,9 +26,3 @@ class Root extends StatelessWidget {
     return const MyApp();
   }
 }
-
-
-
-
-
-
