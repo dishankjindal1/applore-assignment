@@ -1,4 +1,4 @@
-import 'package:applore_assignment_app/modal/service/base.service.dart';
+import 'package:applore_assignment_app/modal/service/base/base.service.dart';
 import 'package:applore_assignment_app/utils/utils.dart';
 import 'package:dio/dio.dart';
 
@@ -20,7 +20,7 @@ class ProductService implements BaseService {
       case 200:
         return response?.data;
       case 404:
-        throw Exception('No Url Found');
+        throw Exception('No data Found');
       case 000:
         throw Exception('Response is null');
       default:

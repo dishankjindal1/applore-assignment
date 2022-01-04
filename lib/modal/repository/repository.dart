@@ -1,1 +1,1 @@
-export 'product.repo.dart';
+export 'product/product.repo.dart';
