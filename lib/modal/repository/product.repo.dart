@@ -1,31 +1,19 @@
-import 'dart:io';
+import 'dart:convert';
+import 'package:applore_assignment_app/modal/data_modal/data.modal.dart';
+import 'package:applore_assignment_app/modal/service/product/product.service.dart';
 
-import 'package:applore_assignment_app/modal/repository/base.repo.dart';
-import 'package:applore_assignment_app/utils/utils.dart';
-import 'package:dio/dio.dart';
+class ProductRepository {
+  final ProductService productService = ProductService();
 
-class ProductRepository implements BaseRepository {
-  static String path = '/product';
-  @override
-  Dio? baseDio;
-
-  @override
-  Future getResponse() async {
-    Response res;
-      res = await baseDio!.get(appUrl + path);
-      Future data = statusResponse(res);
-      return Future.delayed(const Duration(seconds: 2))
-          .then((value) => 'getResponse: Product Repository'.log()).then((value) => data);
+  Future<Product> fetch(String id) async {
+    final String fetchProductData = await productService.getResponse(path: id);
+    final json = jsonDecode(fetchProductData);
+    return Product.fromJson(json);
   }
-  
-  Future<Response> statusResponse(Response response) {
-    switch (response.statusCode) {
-      case 200:
-        return response.data;
-      case 404:
-        throw Exception('No Url Found');
-      default:
-        throw Exception('Something unusual happened on the server side');
-    }
+
+  Future<List<Product>> fetchList() async {
+    final String fetchProductData = await productService.getResponse();
+    final json = jsonDecode(fetchProductData);
+    return (json as List).map((e) => Product.fromJson(e)).toList();
   }
 }
