@@ -4,18 +4,18 @@ import 'package:json_annotation/json_annotation.dart';
 part 'user.modal.g.dart';
 
 @JsonSerializable()
-class User extends Equatable {
+class UserModal extends Equatable {
   final String? id;
   final String? name;
   final String? contact;
 
-  const User({
+  const UserModal({
     required this.id,
     required this.name,
     required this.contact,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  factory UserModal.fromJson(Map<String, dynamic> json) => _$UserModalFromJson(json);
 
   @override
   List<Object?> get props => [id, name, contact];

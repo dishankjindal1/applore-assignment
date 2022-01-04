@@ -44,6 +44,8 @@ dependencies:
   dio: ^4.0.4
   mockito: ^5.0.17
   http_mock_adapter: ^0.3.2
+  cloud_firestore: ^3.1.5
+  hive: ^2.0.5
 
 dev_dependencies:
   flutter_test:

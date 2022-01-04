@@ -1,9 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
-  static FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  static final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  User? profile = _firebaseAuth.currentUser;
 
   Stream<User?> checkAuthStatus() {
-    return firebaseAuth.authStateChanges();
+    return _firebaseAuth.idTokenChanges();
   }
+
+
 }
