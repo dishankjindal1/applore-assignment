@@ -1,15 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'product.modal.dart';
+part of 'user.modal.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Product _$ProductFromJson(Map<String, dynamic> json) => Product(
+UserModal _$UserModalFromJson(Map<String, dynamic> json) => UserModal(
       id: json['id'] as String?,
-      description: json['description'] as String?,
-      imageUrl: json['imageUrl'] as String?,
-      price: json['price'] as String?,
+      name: json['name'] as String?,
+      contact: json['contact'] as String?,
     );
 
