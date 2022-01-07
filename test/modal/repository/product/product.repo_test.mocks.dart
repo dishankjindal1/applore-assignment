@@ -51,6 +51,7 @@ class MockProductRepository extends _i1.Mock implements _i4.ProductRepository {
 /// A class which mocks [Product].
 ///
 /// See the documentation for Mockito's code generation for more information.
+// ignore: must_be_immutable
 class MockProduct extends _i1.Mock implements _i3.Product {
   MockProduct() {
     _i1.throwOnMissingStub(this);

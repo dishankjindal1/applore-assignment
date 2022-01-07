@@ -4,9 +4,10 @@
 
 import 'dart:async' as _i5;
 
+import 'package:applore_assignment_app/modal/data_modal/user/user.modal.dart'
+    as _i2;
 import 'package:applore_assignment_app/modal/service/auth/auth.service.dart'
     as _i3;
-import 'package:applore_assignment_app/view/add_post/user.modal.dart' as _i2;
 import 'package:firebase_auth/firebase_auth.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -22,6 +23,7 @@ import 'package:mockito/mockito.dart' as _i1;
 /// A class which mocks [UserModal].
 ///
 /// See the documentation for Mockito's code generation for more information.
+// ignore: must_be_immutable
 class MockUserModal extends _i1.Mock implements _i2.UserModal {
   MockUserModal() {
     _i1.throwOnMissingStub(this);
